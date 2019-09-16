@@ -14,5 +14,7 @@ Press `Start` button in the toolbar, shaders which manage `Time` variable start 
 Although animated shader should be written by yourself, there's a sample shader in shader folder.
 Copy it into your shelf/shaders folder ( should be `C:\Users\{Username}\Documents\Allegorithmic\Substance Painter\shelf\shaders`).
 
+---
 
 This plugin was developed with Windows 10 / Substance Painter 2019.2.0.
+Based on https://share.substance3d.com/libraries/2815
