@@ -40,10 +40,28 @@ uniform float TimeSpeed;
 //: }
 uniform float Time;
 
+//: param custom {
+//:   "default": false,
+//:   "label": "flip u",
+//:   "visible" : true 
+//: }
+uniform bool FlipU;
+
+//: param custom {
+//:   "default": false,
+//:   "label": "flip v",
+//:   "visible" : true 
+//: }
+uniform bool FlipV;
+
 void shade(V2F inputs)
 {
     vec3 flowVal = getBaseColor(normal_tex, inputs.sparse_coord);
     flowVal = (flowVal * 2 - 1) * FlowPower;
+    int flip_u = int(FlipU);
+    int flip_v = int(FlipV);
+    flowVal.x -= 2 * flip_u * flowVal.x; // flip u
+    flowVal.y -= 2 * flip_v * flowVal.y; // flip v
     float dif1 = fract(Time * TimeSpeed + BlendRatio);
     float dif2 = fract(Time * TimeSpeed);
     float lerpVal = abs( (0.5 - dif1) / 0.5);
