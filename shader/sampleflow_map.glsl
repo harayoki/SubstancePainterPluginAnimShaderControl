@@ -36,7 +36,7 @@ uniform float TimeSpeed;
 //:   "min": 0.0,
 //:   "max": 1.0,
 //:   "label": "time",
-//:   "visible" : false 
+//:   "visible" : true 
 //: }
 uniform float Time;
 
